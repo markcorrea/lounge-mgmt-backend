@@ -14,7 +14,7 @@ router.get('/', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Clientes listados com sucesso!',
+            detail: 'Clients listed successfully!',
             clients,
         });
     } catch (err) {
@@ -22,7 +22,7 @@ router.get('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -39,7 +39,7 @@ router.post('/', authenticate, async (req, res) => {
             .json({
                 type: 'success',
                 title: 'OK',
-                detail: 'Cliente cadastrado com sucesso!',
+                detail: 'Client registered successfully!',
                 persistedClient
             });
     } catch (err) {
@@ -47,7 +47,7 @@ router.post('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -62,7 +62,7 @@ router.post('/search', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Cliente encontrado com sucesso!',
+            detail: 'Client found successfully!',
             clients,
         });
     } catch (err) {
@@ -70,7 +70,7 @@ router.post('/search', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });

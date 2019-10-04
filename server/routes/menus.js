@@ -21,7 +21,7 @@ router.get('/', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Menus carregados com sucesso',
+            detail: 'Menus loaded successfully!',
             menus,
         });
     } catch (err) {
@@ -29,7 +29,7 @@ router.get('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });

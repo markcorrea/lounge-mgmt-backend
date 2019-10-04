@@ -14,7 +14,7 @@ router.get('/', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Terminais encontrados com sucesso!',
+            detail: 'Terminals found successfully!',
             terminals,
         });
     } catch (err) {
@@ -22,7 +22,7 @@ router.get('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -36,7 +36,7 @@ router.get('/:id', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Terminal encontrado com sucesso.',
+            detail: 'Terminal found successfully.',
             terminal,
         });
     } catch (err) {
@@ -44,7 +44,7 @@ router.get('/:id', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });

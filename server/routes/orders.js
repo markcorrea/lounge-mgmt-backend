@@ -14,7 +14,7 @@ router.get('/', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Pedidos encontrados com sucesso!',
+            detail: 'Orders found successfully!',
             orders,
         });
     } catch (err) {
@@ -22,7 +22,7 @@ router.get('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -36,7 +36,7 @@ router.get('/terminal/:id', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Pedidos encontrados com sucesso!',
+            detail: 'Orders found successfully!',
             orders,
         });
     } catch (err) {
@@ -44,7 +44,7 @@ router.get('/terminal/:id', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -59,7 +59,7 @@ router.post('/', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Pedido criado com sucesso!',
+            detail: 'Order created successfully!',
             persistedOrder,
         });
     } catch (err) {
@@ -67,7 +67,7 @@ router.post('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -86,7 +86,7 @@ router.post('/ready/:id', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Pedido pronto!',
+            detail: 'Order ready!',
             order,
         });
     } catch (err) {
@@ -94,7 +94,7 @@ router.post('/ready/:id', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });

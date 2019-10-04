@@ -16,7 +16,7 @@ router.get('/', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Produtos encontrados com sucesso!',
+            detail: 'Products found successfully!',
             products,
         });
     } catch (err) {
@@ -24,7 +24,7 @@ router.get('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -38,7 +38,7 @@ router.get('/:id', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Produto encontrado com sucesso!',
+            detail: 'Product found successfully!',
             product,
         });
     } catch (err) {
@@ -46,7 +46,7 @@ router.get('/:id', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -83,7 +83,7 @@ router.post('/', authenticate, async (req, res) => {
             .json({
                 type: 'success',
                 title: 'OK',
-                detail: 'Produto cadastrado com sucesso!',
+                detail: 'Product registered successfully!',
                 persistedProduct
             });
     } catch (err) {
@@ -91,7 +91,7 @@ router.post('/', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -125,7 +125,7 @@ router.put('/:id', authenticate, async (req, res) => {
             .json({
                 type: 'success',
                 title: 'OK',
-                detail: 'Produto alterado com sucesso!',
+                detail: 'Product updated successfully!',
                 persistedProduct
             });
     } catch (err) {
@@ -133,7 +133,7 @@ router.put('/:id', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'ERRO',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -150,7 +150,7 @@ router.delete('/:id', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Produto excluído com sucesso!',
+            detail: 'Product deleted successfully!',
             products,
         });
     } catch (err) {
@@ -158,7 +158,7 @@ router.delete('/:id', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'Erro',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -197,7 +197,7 @@ router.post('/search', authenticate, async (req, res) => {
         res.json({
             type: false,
             title: 'OK',
-            detail: 'Produtos encontrados com sucesso!',
+            detail: 'Products found successfully!',
             products,
         });
     } catch (err) {
@@ -205,7 +205,7 @@ router.post('/search', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'Erro',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -248,7 +248,7 @@ router.post('/pay', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Produto(s) pago(s) com sucesso (com baixa de estoque)!',
+            detail: 'Product(s) paid successfully (taken out from inventory)!',
             persistedTicket,
         });
 
@@ -257,7 +257,7 @@ router.post('/pay', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'Erro',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -293,7 +293,7 @@ router.post('/pay/cashier', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Venda realizada com sucesso (com baixa de estoque)!',
+            detail: 'Sale completed successfully (taken out from inventory)!',
             persistedCashier,
         });
 
@@ -302,7 +302,7 @@ router.post('/pay/cashier', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'Erro',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'EUnexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -333,7 +333,7 @@ router.post('/remove', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Produto(s) removido(s) da comanda (sem baixa de estoque)!',
+            detail: 'Product(s) removed from ticket (kept in inventory)!',
             persistedTicket,
         });
 
@@ -342,7 +342,7 @@ router.post('/remove', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'Erro',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });
@@ -375,7 +375,7 @@ router.post('/remove-from-stock', authenticate, async (req, res) => {
         res.json({
             type: 'success',
             title: 'OK',
-            detail: 'Baixa de estoque do(s) produto(s) concluída!',
+            detail: 'Removal from inventory completed!',
             persistedTicket,
         });
 
@@ -384,7 +384,7 @@ router.post('/remove-from-stock', authenticate, async (req, res) => {
             errors: [{
                 type: 'error',
                 title: 'Erro',
-                detail: 'Erro inesperado. Contate o administrador do sistema.',
+                detail: 'Unexpected error. Please contact the administrator.',
                 errorMessage: err.message,
             }, ],
         });

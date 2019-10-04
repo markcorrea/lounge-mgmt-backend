@@ -34,7 +34,7 @@ router.post('/register', async (req, res) => {
       .status(201)
       .json({
         title: 'OK',
-        detail: 'Usuário cadastrado com sucesso!',
+        detail: 'User registered successfully!',
         csrfToken: session.csrfToken,
       });
   } catch (err) {
@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
           {
             type: 'error',
             title: 'ERRO',
-            detail: 'O email deve ser válido',
+            detail: 'The e-mail should be valid.',
           },
         ],
       });
@@ -71,7 +71,7 @@ router.post('/login', async (req, res) => {
           {
             type: 'error',
             title: 'ERRO',
-            detail: 'A senha deve ser um texto',
+            detail: 'The password should be a text',
           },
         ],
       });
@@ -101,7 +101,7 @@ router.post('/login', async (req, res) => {
       })
       .json({
         title: 'OK',
-        detail: 'Login realizado com sucesso.',
+        detail: 'Logged in successfully!',
         token: session.token,
       });
   } catch (err) {
@@ -110,7 +110,7 @@ router.post('/login', async (req, res) => {
         {
           type: 'error',
           title: 'ERRO',
-          detail: 'Verifique se o email e a senha estão corretos!',
+          detail: 'Please verify your e-mail and password.',
           errorMessage: err.message,
         },
       ],
@@ -125,7 +125,7 @@ router.get('/me', authenticate, async (req, res) => {
 
     res.json({
       title: 'OK',
-      detail: 'Usuário autenticado com sucesso!',
+      detail: 'User authenticated successfully!',
       user,
     });
   } catch (err) {
@@ -213,7 +213,7 @@ router.put('/logout', authenticate, async (req, res) => {
 
     res.json({
       title: 'OK',
-      detail: 'Logout realizado com sucesso!',
+      detail: 'Logged out successfully!',
     });
   } catch (err) {
     res.status(400).json({
@@ -221,7 +221,7 @@ router.put('/logout', authenticate, async (req, res) => {
         {
           type: 'error',
           title: 'ERRO',
-          detail: 'Não foi possível realizar o logout!',
+          detail: 'Error on Logout',
           errorMessage: err.message,
         },
       ],
