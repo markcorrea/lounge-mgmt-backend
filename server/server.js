@@ -38,6 +38,7 @@ app.use(function (req, res, next) {
     'https://kanova.netlify.com',
     'https://kanovabeer.netlify.com',
     'https://beerball.netlify.com',
+    'https://loungemgmt.netlify.com',
   ];
   let origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
