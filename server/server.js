@@ -35,10 +35,10 @@ app.use(function (req, res, next) {
     'http://localhost:9000',
     'http://127.0.0.1:8080',
     'http://localhost:8080',
-    'https://kanova.netlify.com',
-    'https://kanovabeer.netlify.com',
-    'https://beerball.netlify.com',
-    'https://loungemgmt.netlify.com',
+    'https://kanova.netlify.app',
+    'https://kanovabeer.netlify.app',
+    'https://beerball.netlify.app',
+    'https://loungemgmt.netlify.app',
   ];
   let origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
